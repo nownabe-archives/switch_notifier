@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
+
+require "switch_notifier/runner"
+
+SwitchNotifier::Runner.new(
+  ENV["SLACK_WEBHOOK_URL"],
+  ENV["SLACK_CHANNEL"]
+).run
